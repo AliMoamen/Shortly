@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <title>Shortly</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous"     referrerpolicy="no-referrer" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <section class=" section1">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="images/logo.svg" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Features</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Pricing</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Resources</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Login</a>
+            </li>
+            <li class="nav-item">
+              <button type="button" class="btn" name="button">Sign Up</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid row overview">
+      <div class="abstract col-lg-6 col-md-12 col-sm-12">
+        <h1>More than just shorter links.</h1>
+        <p> Build your brand’s recognition and get detailed insights
+          on how your links are performing.</p>
+        <button type="button" class="btn" name="button">Get Started</button>
+      </div>
+      <img src="images/illustration-working.svg" id="illustration" class="col-lg-6 col-md-12 col-sm-12" alt="">
+    </div>
+  </section>
+  <div class="shortenBox">
+    <form action="/" method="post">
+      <input type="text" name="longurl" placeholder="Shorten a link here.">
+      <button type="submit" class="btn" id="shortenBtn" name="button">Shorten it!</button>
+    </form>
+  </div>
+  <section class="section2">
+  <% for(var i = 0 ; i < links.length ; i++){ %>
+    <div class="box row">
+      <div class="col-lg-4 col-md-12 col-md-12" style="text-align:left">
+        <p><%= links[i] %></p>
+      </div>
+      <div class="col-lg-4 col-md-12 col-md-12">
+      </div>
+      <div class="col-lg-4 col-md-12 col-md-12 .lastChild">
+        <a target="_blank"  class= <%= "shortlink" + i  %>  href= <%=shortLinks[i]%>> <%=shortLinks[i]%> </a>
+        <button type="button" data-clipboard-target= <%= ".shortlink" + i %>  class="btn" id="copy" name="button">Copy</button>
+      </div>
+    </div>
+<%  } %>
+
+    <div class="header">
+      <h2>Advanced Statistics</h2>
+      <p>Track how your links are performing across the web with<br> our
+        advanced statistics dashboard.</p>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 col-md-12 col-sm-12 feature">
+        <img src="images/icon-brand-recognition.svg" alt="">
+        <h4>Brand Recognition</h4>
+        <p> Boost your brand recognition with each click. Generic links don’t
+          mean a thing. Branded links help instil confidence in your content.</p>
+      </div>
+      <div class="col-lg-3 col-md-12 col-sm-12 feature">
+        <img src="images\icon-detailed-records.svg" alt="">
+        <h4>Detailed Records</h4>
+        <p>Gain insights into who is clicking your links. Knowing when and where
+          people engage with your content helps inform better decisions.</p>
+      </div>
+      <div class="col-lg-3 col-md-12 col-sm-12 feature">
+        <img src="images\icon-fully-customizable.svg" alt="">
+        <h4>Fully Customizable</h4>
+        <p>Improve brand awareness and content discoverability through customizable
+          links, supercharging audience engagement.</p>
+      </div>
+    </div>
+  </section>
+  <section class="section3">
+    <div class="">
+      <h2>Boost your links today.</h2>
+      <button type="button" class="btn">Get Started</button>
+    </div>
+  </section>
+  <section class="section4">
+    <div class="footer row">
+      <div class="col-lg-4 col-md-12 col-sm-12">
+        <a href="#"><img src="images/logo2.svg" id="img-footer" alt=""></a>
+      </div>
+      <div class="col-lg-4 col-md-12 col-sm-12">
+        <table>
+          <tr>
+            <th>Features</th>
+            <th>Resources</th>
+            <th>Company</th>
+          </tr>
+          <tr>
+            <td><a href="#">Link Shortening</a></td>
+            <td><a href="#">Blog</a></td>
+            <td><a href="#">About</a></td>
+          </tr>
+          <tr>
+            <td><a href="#">Branded Links</a></td>
+            <td><a href="#">Developers</a></td>
+            <td><a href="#">Our Team</a></td>
+          </tr>
+          <tr>
+            <td><a href="#">Analytics</a></td>
+            <td><a href="#">Support</a></td>
+            <td><a href="#">Careers</a></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td></td>
+            <td><a href="#">Contact</a></td>
+          </tr>
+        </table>
+      </div>
+      <div class="col-lg-4 col-md-12 col-sm-12">
+        <a href="#"><i class="fab fa-facebook-square socials"></i></a>
+        <a href="#"><i class="fab fa-twitter socials"></i></a>
+        <a href="#"><i class="fab fa-pinterest socials"></i></a>
+        <a href="#"><i class="fab fa-instagram socials"></i></a>
+      </div>
+    </div>
+  </section>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/clipboard@2.0.8/dist/clipboard.min.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
