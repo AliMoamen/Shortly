@@ -4,8 +4,8 @@ const bodyParser = require("body-parser")
 const request = require("request")
 const https = require("https")
 const Swal = require('sweetalert2')
-const links = []
-const shortLinks = []
+var links = []
+var shortLinks = []
 app.use(bodyParser.urlencoded({
   extended: true
 }))
@@ -18,7 +18,15 @@ app.listen( process.env.PORT || 3000 , function() {
 })
 
 app.get("/", function(req, res) {
+  links = []
+  shortLinks = []
   res.render("index", {
+    links: links,
+    shortLinks: shortLinks
+  })
+})
+app.get("/shortLinks", function(req, res) {
+  res.render("shortLinks", {
     links: links,
     shortLinks: shortLinks
   })
@@ -47,7 +55,7 @@ app.post("/", function(req, res) {
         console.log(shortUrl)
         links.push(longurl)
         shortLinks.push(shortUrl)
-        res.redirect("/")
+        res.redirect("/shortLinks")
       })
     })
     request.write(jsonData)
